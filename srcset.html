@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Test</title>
+	<meta charset="utf-8">
+    <script type="text/javascript" src="srcset.js"></script>
+	<script type="text/javascript">
+		window.onload=init;
+
+		function init() {
+			doSrcset();
+		}
+
+		function say(text) {
+			var message=document.getElementById('message');
+			say=function(text) {
+				console.log('Text: '+text);
+				message.textContent+=text+'\n';
+			}
+			say(text);
+		}
+		
+
+	</script>
+	<style type="text/css">
+		html, body {
+			margin: 0;
+		}
+		div#container {
+			width: 800px;
+			overflow: scroll;
+		}
+
+	/*	Message
+		================================================ */
+
+		div#message {
+			font-family: monospace;
+			white-space: pre;
+			padding: 1em;
+			border: thin solid #666;
+			height: 200px;
+			width: 800px;
+			position: fixed;
+			qright: 1em;
+			top: 400px;
+			box-shadow: 4px 4px 4px #666;
+			overflow: auto;
+		}
+
+
+		div#thing {
+			background-color: red;
+			width: 595px;
+			width: 6.2in;
+			height: 20px;
+			box-sizing: border-box;
+			border: thin solid;
+		}
+
+	</style>
+</head>
+<body>
+<div id="message"></div>
+<div id="thing">q</div>
+<img src="kangaroo.jpg" srcset="kangaroo.jpg, wombat.jpg 400w, emu.jpg 800w"><br>
+<img src="kangaroo.jpg" srcset="koala.jpg, galah.jpg 400w, bilby.jpg 800w">
+<div id="container">
+</body>
+</html>
