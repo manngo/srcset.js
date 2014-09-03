@@ -30,6 +30,11 @@ For your JavaScript add something like the following:
 
 That should do the job.
 
+Sample
+------
+
+[Sample](sample/srcset.html)
+
 Browser Support
 ---------------
 
