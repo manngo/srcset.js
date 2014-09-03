@@ -8,7 +8,7 @@ srcset allows you to specify a list of alternative sources for an img element. T
 Currently, this is limited to screen width. The next version will include screen resolution, once I work out the most practical way to do this cross-browser.
 
 Usage
-=====
+-----
 
 In your HTML img element, add a src attribute as follows:
 
@@ -31,7 +31,7 @@ For your JavaScript add something like the following:
 That should do the job.
 
 Browser Support
-===============
+---------------
 
 Eventually this widget won’t be necessary. Currently it tests whether srcset support is natively implemented and exits if so.
 
@@ -39,13 +39,14 @@ In the meantime it supports all browsers which support the JavaScript matchMedia
 
 For the most part, the browsers which most need responsive images, that is, the ones on mobile devices, are supported. However, for the rare device which hase IE8 or IE9, it doesn’t work.
 
-Possbile Enhancements
-=====================
+Possible Enhancements
+---------------------
 
 1	Support for screen resolutions.
+
 2	Support for IE8 & IE9.
 
 Disclaimer
-==========
+----------
 
 This product doeswhat it does and doesn’t do what it doesn‘t do.
