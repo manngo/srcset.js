@@ -28,37 +28,71 @@
         </ul>
       </header>
       <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+        <h1>
+<a name="srcset-widget" class="anchor" href="#srcset-widget"><span class="octicon octicon-link"></span></a>srcset Widget</h1>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>JavaScript Widget to implement srcset attribute of &lt;img&gt; element.</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<p>srcset allows you to specify a list of alternative sources for an img element. This allows the browser to match an image to the screen properties, producing a responsive image.</p>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>Currently, this is limited to screen width. The next version will include screen resolution, once I work out the most practical way to do this cross-browser.</p>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>In your HTML img element, add a src attribute as follows:</p>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<div class="highlight highlight-html"><pre>    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"kangaroo.jpg"</span> <span class="na">srcset=</span><span class="s">"kangaroo.jpg, wombat.jpg 400w, emu.jpg 800w"</span><span class="nt">&gt;</span>
+</pre></div>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p>In principal, supporting browsers should ignore the original src attribute, which is repeated in the srcset attribute. The additional images are followed by their minimum screen width requirment.</p>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<p>For your JavaScript add something like the following:</p>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<div class="highlight highlight-html"><pre>    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"srcset.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+        if(window.addEventListener) window.addEventListener('load',init',false);
+        else window.attachEvent('onload',init');    //  Legacy browsers; srcset won’t work anyway
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+        function init() {
+            doSrcset();
+            //  etc
+        }
+</pre></div>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<p>That should do the job.</p>
+
+<h2>
+<a name="sample" class="anchor" href="#sample"><span class="octicon octicon-link"></span></a>Sample</h2>
+
+<p><a href="sample/srcset.html">Sample</a></p>
+
+<p>Change the screen width and see the different images replace the curren ones. If you use Firefox’s responsive design tool, it’s just a matter of dragging the edge of the container.</p>
+
+<h2>
+<a name="browser-support" class="anchor" href="#browser-support"><span class="octicon octicon-link"></span></a>Browser Support</h2>
+
+<p>Eventually this widget won’t be necessary. Currently it tests whether srcset support is natively implemented and exits if so.</p>
+
+<p>In the meantime it supports all browsers which support the JavaScript matchMedia() method. This means all modern browsers, as well as IE10+.</p>
+
+<p>For the most part, the browsers which most need responsive images, that is, the ones on mobile devices, are supported. However, for the rare device which hase IE8 or IE9, it doesn’t work.</p>
+
+<h2>
+<a name="possible-enhancements" class="anchor" href="#possible-enhancements"><span class="octicon octicon-link"></span></a>Possible Enhancements</h2>
+
+<ol>
+<li><p>Support for screen resolutions.</p></li>
+<li><p>Support for IE8 &amp; IE9.</p></li>
+</ol><h2>
+<a name="disclaimer" class="anchor" href="#disclaimer"><span class="octicon octicon-link"></span></a>Disclaimer</h2>
+
+<p>Usual stuff:</p>
+
+<ul>
+<li>This product does what it does and doesn’t do what it doesn‘t do.</li>
+<li>It probably won’t break anything, but if it does, it’s all lies I tell you, it wasn’t me, it was someone who looks like me, I’ve never heard of the place, I don’t know what you’re talking about, and, if you’re talking about Room 403, I’ve never heard if it.</li>
+</ul>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/manngo">manngo</a></p>
