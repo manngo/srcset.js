@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Test</title>
+	<meta charset="utf-8">
+    <script type="text/javascript" src="srcset.js"></script>
+	<script type="text/javascript">
+		window.onload=init;
+
+		function init() {
+			doSrcset();
+		}
+
+		function say(text) {
+			var message=document.getElementById('message');
+			say=function(text) {
+				console.log('Text: '+text);
+				message.textContent+=text+'\n';
+			}
+			say(text);
+		}
+		
+
+	</script>
+	<style type="text/css">
+		html, body {
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+<img src="kangaroo.jpg" srcset="kangaroo.jpg, wombat.jpg 400w, emu.jpg 800w"><br>
+<img src="kangaroo.jpg" srcset="koala.jpg, galah.jpg 400w, bilby.jpg 800w">
+</body>
+</html>
