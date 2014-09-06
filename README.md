@@ -1,5 +1,5 @@
-srcset Widget
-=============
+srcset.js
+=========
 
 JavaScript Widget to implement srcset attribute of &lt;img&gt; element.
 
