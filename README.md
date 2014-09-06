@@ -7,6 +7,8 @@ srcset allows you to specify a list of alternative sources for an img element. T
 
 Currently, this is limited to screen width. The next version will include screen resolution, once I work out the most practical way to do this cross-browser.
 
+You can download the latest version [here](https://github.com/manngo/srcset/releases/latest) …
+
 Usage
 -----
 
