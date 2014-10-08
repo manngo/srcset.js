@@ -5,7 +5,7 @@ JavaScript Widget to implement srcset attribute of &lt;img&gt; element.
 
 srcset allows you to specify a list of alternative sources for an img element. This allows the browser to match an image to the screen properties, producing a responsive image.
 
-You can download the latest version [here](https://github.com/manngo/srcset/releases/latest) …
+You can download the latest version [here](https://github.com/manngo/srcset.js/releases/latest) …
 
 Usage
 -----
