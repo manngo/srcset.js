@@ -48,7 +48,7 @@ That should do the job.
 Sample
 ------
 
-Click [Here](https://manngo.github.io/srcset/sample/srcset.html) for a sample.
+Click [Here](https://manngo.github.io/srcset.js/sample/srcset.html) for a sample.
 
 Change the screen width and see the different images replace the curren ones. If you use Firefox’s responsive design tool, it’s just a matter of dragging the edge of the container.
 
