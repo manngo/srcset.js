@@ -1,8 +1,9 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<title>Test</title>
+	<title>srcset Sample</title>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="srcset.js"></script>
 	<script type="text/javascript">
 		window.onload=init;
@@ -11,25 +12,45 @@
 			doSrcset();
 		}
 
-		function say(text) {
-			var message=document.getElementById('message');
-			say=function(text) {
-				console.log('Text: '+text);
-				message.textContent+=text+'\n';
-			}
-			say(text);
-		}
-		
-
 	</script>
 	<style type="text/css">
 		html, body {
 			margin: 0;
 		}
+		body {
+			max-width: 600px;
+			margin: 0 auto;
+			font-family: sans-serif;
+			padding: 1em;
+		}
+		figure {
+			border-radius: 8px;
+			box-shadow: inset 4px 4px 2px white, inset -4px -4px 4px #999, 4px 4px 4px #000;
+			background-image: linear-gradient(-15deg, #ddd 30%, #eee 50%, #ddd 60%, #eee 90%);
+			padding: 1em;
+			display: inline-block;
+			margin: 0 auto;
+		}
+		figcaption {
+			color: #666;
+			border-radius: 4px;
+			box-shadow: inset 4px 4px 2px #999, inset -4px -4px 4px white;
+			padding: 1em;
+			font-weight: bold;
+			font-size: 1em;
+			text-align: center;
+		}
 	</style>
 </head>
 <body>
-<img src="kangaroo.jpg" srcset="kangaroo.jpg, wombat.jpg 400w, emu.jpg 800w"><br>
-<img src="kangaroo.jpg" srcset="koala.jpg, galah.jpg 400w, bilby.jpg 800w">
+	<h1>srcset Sample</h1>
+<!--	<img src="kangaroo.jpg" srcset="kangaroo.jpg, wombat.jpg 400w, emu.jpg 800w"><br>
+	<img src="kangaroo.jpg" srcset="koala.jpg, galah.jpg 400w, bilby.jpg 800w">
+-->
+	<p>Below is a responsive version of a photo of the Sydney Opera House:</p>
+	<figure>
+		<figcaption>Sydney Opera House</figcaption>
+		<img id="ok" src="images/oh1x408.jpg" srcset="images/oh1x192.jpg, images/oh1x408.jpg 460w, images/oh2x192.jpg 2x, images/oh2x408.jpg 2x 460w">
+	</figure>
 </body>
 </html>
